@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Firebase Authentication</title>
     <style>
-        /* Custom CSS for glassmorphism effect */
+       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -108,8 +108,10 @@
             <p class="switch-form"
                 style="display: grid; justify-content: center; align-items: center; text-decoration: none; color: #5433ff;">
                 <a href="password selector .html " style="text-decoration: none; color: #f3f3f3;">Customize Password</a>
+                <a id="redirect_link_1" href="security.html" style="display: none;"></a>
+
             </p>
-        </div><!-- end glassmorphism -->
+        </div> 
 
         <div class="glassmorphism" id="login_form">
             <h2>Login</h2>
@@ -131,8 +133,8 @@
                 <a href="forgot.html" style="text-decoration: none; color: #e7e7ea; margin-bottom: -10px;"><b>Forgot Password</b></a></p>
                 <a id="redirect_link" href="CAPTCHA.html" style="display: none;"></a>
 
-        </div><!-- end glassmorphism -->
-    </div><!-- end container -->
+        </div> 
+    </div> 
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
@@ -162,6 +164,8 @@
                     const user = userCredential.user;
                     console.log(user);
                     alert("Registration successful!");
+                    window.location.href = document.getElementById("redirect_link_1").getAttribute("href");
+
                 })
                 .catch((error) => {
                     console.error(error);
